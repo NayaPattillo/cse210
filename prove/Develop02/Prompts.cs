@@ -12,9 +12,11 @@ public class Prompts{
         prompts.Add("What was the funnest thing you did today?");
         prompts.Add("Did you go anywhere intereting today?");
         prompts.Add("What did you dream about last night?");
+
         var random = new Random();
         int listindex = prompts.Count;
         int randomPrompt = random.Next(listindex);
+        
         Console.WriteLine(prompts[randomPrompt]);
         entry = Console.ReadLine();
         
