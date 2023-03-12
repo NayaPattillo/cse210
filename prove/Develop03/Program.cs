@@ -9,18 +9,18 @@ class Program
         Console.WriteLine("Would you like to see Scripture 1 or Scripture 2?: ");
         string choice = Console.ReadLine();
 
-        Scripture firstScripture = new Scripture();
-        string _scripture1 = firstScripture.GetScripture1();
-        Reference firstReference = new Reference();
-        string _reference1 = firstReference.GetReference1();
+        Scripture _firstScripture = new Scripture();
+        string _scripture1 = _firstScripture.GetScripture1();
+        Reference _firstReference = new Reference();
+        string _reference1 = _firstReference.GetReference1();
 
-        string verse1 = "";
-        string verse2 = "";
+        string _verse1 = "";
+        string _verse2 = "";
 
-        Scripture secondScripture = new Scripture(verse1, verse2);
-        string _scripture2 = secondScripture.GetScripture2();
-        Reference secondReference = new Reference(verse1, verse2);
-        string _reference2 = secondReference.GetReference2();
+        Scripture _secondScripture = new Scripture(_verse1, _verse2);
+        string _scripture2 = _secondScripture.GetScripture2();
+        Reference _secondReference = new Reference(_verse1, _verse2);
+        string _reference2 = _secondReference.GetReference2();
 
         
         string input = "";
@@ -31,9 +31,8 @@ class Program
             input = Console.ReadLine();
         
             while (input != "quit"){
-                Word makelist = new Word(_scripture1);
-                Word replace = new Word();
-                string _newScripture = replace.GetReplacement();
+                Word _word = new Word(_scripture1);
+                string _newScripture = _word.GetReplacement();
 
                 Console.Clear();
                 Console.WriteLine(_newScripture);
@@ -48,9 +47,8 @@ class Program
             input = Console.ReadLine();
 
             while (input != "quit"){
-                Word makelist = new Word(_scripture2);
-                Word replace = new Word();
-                string _newScripture = replace.GetReplacement();
+                Word _word = new Word(_scripture2);
+                string _newScripture = _word.GetReplacement();
 
                 Console.Clear();
                 Console.WriteLine(_newScripture);

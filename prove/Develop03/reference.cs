@@ -1,22 +1,22 @@
 public class Reference{
-    private string reverence1;
-    private string reverence2;
+    private string _reverence1;
+    private string _reverence2;
 
     public Reference(){
-        reverence1 = "1Nephi 1:1";
+        _reverence1 = "1Nephi 1:1";
     }
-    public Reference(string verse1, string verse2){
-        verse1 = "5";
-        verse2 = "6";
-        reverence2 = $"Enos 1:{verse1}-{verse2}";
+    public Reference(string _verse1, string _verse2){
+        _verse1 = "5";
+        _verse2 = "6";
+        _reverence2 = $"Enos 1:{_verse1}-{_verse2}";
     }
 
     public string GetReference1(){
-        string text = reverence1;
+        string text = _reverence1;
         return text;
     }
     public string GetReference2(){
-        string text = reverence2;
+        string text = _reverence2;
         return text;
     }
 }
