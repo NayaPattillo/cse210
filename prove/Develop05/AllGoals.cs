@@ -17,7 +17,7 @@ class AllGoals{
     }
     string _filePath = "";
     public string DisplayGetGoalFile(){
-        Console.WriteLine("What file would you like to save to? (goals.txt): ");
+        Console.WriteLine("Select file (goals.txt): ");
         _filePath = Console.ReadLine();
         return _filePath;
     }
@@ -44,6 +44,7 @@ class AllGoals{
     }
 
     public void LoadGoals(){
+        string fileToSave = DisplayGetGoalFile();
         var fileGoals = saveLoadCSV.LoadFromCSV(_filePath);
 
         Goal goal = null;
@@ -57,8 +58,9 @@ class AllGoals{
             }
             if (goal != null && allGoals.Contains(goal) == false){
                 allGoals.Add(goal);
-            }   
+            }      
         }
+        Console.WriteLine(goal);
         Console.WriteLine("\nGoals Loaded.\n");
     }
 
@@ -70,12 +72,14 @@ class AllGoals{
     public void DisplayGoalsRecordEvent(){
         Console.WriteLine("Goals: ");
         foreach (Goal goal in allGoals){
-            Console.WriteLine(string.Format("{0} {1}", allGoals.IndexOf(goal) + 1, goal.getGoalName()));
+            int index = allGoals.IndexOf(goal) + 1;
+            Console.WriteLine($"{index} {goal.getGoalName()}");
         }
+
         Console.Write("Which goal was accomplished?: ");
 
         int recordEvent = int.Parse(Console.ReadLine())-1;
-        allGoals[recordEvent].RecordEvent(DisplayGetLoadFile());
+        allGoals[recordEvent].RecordEvent(allGoals);
         totalPoints += allGoals[recordEvent].getGoalPoints();
         Console.WriteLine(string.Format("You have {0} total points", totalPoints.ToString()));
     }    

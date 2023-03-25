@@ -14,10 +14,7 @@ class SimpleGoal : Goal{
     public override string ToString(){
         return string.Format("[{0}] {1} ({2})", ((goalCompete == false)? "" : "X"), getGoalName(), getGoalDescription());
     }
-    public override void RecordEvent(string fileName){
-        using (StreamWriter outputFile = new StreamWriter(fileName)){
-            goalCompete = true;
-        }
+    public override void RecordEvent(List<Goal> goals){
         goalCompete = true;
     }
 

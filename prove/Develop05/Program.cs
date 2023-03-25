@@ -18,6 +18,7 @@ class Program
             switch (userMainMenuSelection){
                 case 1:
                     int createNewGoalSelection = menu.DisplayGetCreateNewGoalMenu();
+                    int menuSelection = menu.GetMainMenuSelection();
                     Goal goal = null;
                     switch (createNewGoalSelection){
                         case 1:

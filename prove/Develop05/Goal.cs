@@ -33,10 +33,6 @@ class Goal{
         string display = $"{getGoalName()}({getGoalDescription()}) {getGoalPoints()}Points";
         return display;
     }
-    public virtual void RecordEvent(string fileName){
-        using (StreamWriter outputFile = new StreamWriter(fileName)){
-            
-        }
-    }
+    public virtual void RecordEvent(List<Goal> goals){}
 
 }

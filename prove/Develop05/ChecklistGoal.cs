@@ -18,15 +18,12 @@ class ChecklistGoal : Goal{
     }
 
     public override string ToCSVRecord(){
-        return string.Format("{0}|{1}|{2}|{3}|{4}", goalType, getGoalName(), getGoalDescription(), getGoalPoints(),getTimesCompleted(), goalCompete);
+        return string.Format("{0}|{1}|{2}|{3}|{4}|{5}", goalType, getGoalName(), getGoalDescription(), getGoalPoints(),getTimesCompleted(), goalCompete);
     }
     public override string ToString(){
         return string.Format("[{0}] {1} ({2})", ((goalCompete == false)? "" : "X"), getGoalName(), getGoalDescription());
     }
-    public override void RecordEvent(string fileName){
-        using (StreamWriter outputFile = new StreamWriter(fileName)){
-            goalCompete = true;
-        }
+    public override void RecordEvent(List<Goal> goals){
         while (goalCompete == false){
             complete = complete + 1;
             if (complete == timesComplete){

@@ -1,2 +1,2 @@
 0
-1|goal|goal1|100|False
+1|goal|goal|10|False
