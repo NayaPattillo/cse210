@@ -6,7 +6,6 @@ class Address{
     string _city;
     string _state;
     string _country;
-    int shipping;
 
     public Address(){}
 
