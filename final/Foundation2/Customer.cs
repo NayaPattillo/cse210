@@ -3,7 +3,6 @@ class Customer{
     List<string> customerList = new List<string>();
     string _name;
     string _address;
-    bool _usa;
     
     public Customer(){}
     public void SetCustomer(string name, string address){
