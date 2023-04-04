@@ -1,8 +1,8 @@
 class Customer{
 
     List<string> customerList = new List<string>();
-    string _name;
-    string _address;
+    private string _name;
+    private string _address;
     
     public Customer(){}
     public void SetCustomer(string name, string address){
